@@ -10,59 +10,57 @@ function getComputerChoice() {
 };
 
 function playRound(playerSelection, computerSelection) {
+    let result
     let playersChoice = playerSelection.toLowerCase();
     if (playersChoice == 'rock') {
         if (computerSelection == 'Rock') {
-            return 0;
+            result = 'draw';
         }
         else if (computerSelection == 'Paper') {
-            return 2;
+            result = 'lost';
         }
-        else {return 1};
+        else {result = 'win'};
     }
     else if (playersChoice == 'paper') {
         if (computerSelection == 'Rock') {
-            return 1;
+            result = 'win';
         }
         else if (computerSelection == 'Paper') {
-            return 0;
+            result = 'draw';
         }
-        else {return 2};
+        else {result = 'lost'};
     }
     else {
         if (computerChoice == 'Rock') {
-            return 2;
+            result = 'lost';
         }
         else if (computerChoice == 'Paper') {
-            return 1;
+            result = 'win';
         }
-        else {return 0};
+        else {result = 'draw'};
     };
+    return (result)
 };
 
 function game() {
     let playerScore = 0
     let computerScore = 0
-
     for (let i = 0; i < 5; i++) {
-        let score = playRound(playerSelection, computerSelection);
-        if (score == 1) {
+        let result = playRound(playerSelection, computerSelection)
+        if (result == 'win') {
             playerScore++
         }
-        else if (score == 2) {
+        else if (result == 'lost') {
             computerScore++
         }
-        else {continue};
-     };
-     
-     if (playerScore > computerScore) {
-        console.log('You won, u got ' + playerScore + ' points!')
-     }
-     else {
-        console.log('You lost, u got ' + playerScore + ' points!')
-     }
+        else {continue}
+    }
+    if (playerScore > computerScore) {
+        console.log('Du vant! Du fikk ' + playerScore + ' poeng')
+    }
+    else {console.log('Du tapte! Du fikk ' + playerScore + ' poeng, mens computer fikk ' + computerScore + ' poeng')}
 }
 
 const playerSelection = 'Paper';
 const computerSelection = getComputerChoice();
-game()
+game();
