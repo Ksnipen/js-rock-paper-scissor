@@ -1,0 +1,28 @@
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    margin: auto;
+    width: 600px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.result {
+    height: 30px;
+    width: 400px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#submit {
+    width: 100px;
+}
+#choice {
+    width: 100px;
+}
