@@ -42,11 +42,11 @@ function playRound(playerSelection, computerSelection) {
     return (result)
 };
 
-function game() {
+function game(playerSelection) {
     let playerScore = 0
     let computerScore = 0
     for (let i = 0; i < 5; i++) {
-        let result = playRound(playerSelection, computerSelection)
+        let result = playRound(playerSelection, getComputerChoice())
         if (result == 'win') {
             playerScore++
         }
@@ -56,11 +56,10 @@ function game() {
         else {continue}
     }
     if (playerScore > computerScore) {
-        console.log('Du vant! Du fikk ' + playerScore + ' poeng')
+        console.log('Du vant! Du fikk ' + playerScore + ' poeng, mens computeren fikk ' + computerScore + ' poeng')
     }
     else {console.log('Du tapte! Du fikk ' + playerScore + ' poeng, mens computer fikk ' + computerScore + ' poeng')}
 }
 
 const playerSelection = 'Paper';
-const computerSelection = getComputerChoice();
-game();
+game(playerSelection);
