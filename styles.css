@@ -33,15 +33,21 @@
 .saks,
 .papir {
     flex: 1;
-    height: 300px;
+    height: 200px;
     margin: 20px;
     cursor: pointer;
+    border-radius: 20px;
 }
 .stein {
     background-image: url("https://thumbs.dreamstime.com/b/flirty-japanese-cartoon-rock-digital-illustration-116946145.jpg");
     background-size: contain;
     background-position: center;
     background-repeat:no-repeat;
+}
+.stein:hover,
+.saks:hover,
+.papir:hover {
+    border: 2px solid #454545;
 }
 .saks {
     background-image: url("https://static.vecteezy.com/system/resources/previews/004/557/738/original/black-scissors-cartoon-object-vector.jpg");
@@ -54,4 +60,12 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+}
+.result-container {
+    width: 600px;
+    height:200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
