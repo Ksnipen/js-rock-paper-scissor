@@ -17,36 +17,40 @@ function playRound(playerChoice, computerSelection) {
     let playerSelection = playerChoice.toLowerCase();
 
     if (playerSelection == computerSelection) {
-        result = 'draw'
+        result = 'Det ble uavgjort.'
     }
     else {
         if (playerSelection == 'papir') {
             if (computerSelection == 'stein') {
-                result = 'win'
+                result = 'Du vant!'
             }
             else {
-                result = 'lost'
+                result = 'Du tapte...'
             }
         }
         else if (playerSelection == 'stein') {
             if (computerSelection == 'papir') {
-                result = 'lost'
+                result = 'Du tapte...'
             }
             else {
-                result = 'win'
+                result = 'Du vant!'
             }
         }
         else {
             if (computerSelection == 'papir') {
-                result = 'win'
+                result = 'Du vant!'
             }
             else {
-                result = 'lost'
+                result = 'Du tapte...'
             }
         }
     }
     return result
 };
+
+function printResult(result) {
+    document.getElementById('result').innerHTML = result
+}
 
 // function gameOfFive(playerSelection) {
 //     let playerScore = 0
@@ -72,4 +76,13 @@ function playRound(playerChoice, computerSelection) {
 //         return ("Du tapte! " + playerScore + "-" + computerScore)
 //     }
 // }
-
+printResult()
+document.getElementById('stein').onclick = function() {
+    printResult(playRound('stein', getComputerChoice()));
+}
+document.getElementById('saks').onclick = function() {
+    printResult(playRound('saks', getComputerChoice()));
+}
+document.getElementById('papir').onclick = function() {
+    printResult(playRound('papir', getComputerChoice()));
+}
