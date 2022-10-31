@@ -48,42 +48,28 @@ function playRound(playerChoice, computerSelection) {
     return result
 };
 
-function game(playerSelection) {
-    let playerScore = 0
-    let computerScore = 0
-    for (let i = 0; i < 10; i++) {
-        let result = playRound(playerSelection, getComputerChoice())
-        if (result == 'win') {
-            playerScore++
-        }
-        else if (result == 'lost') {
-            computerScore++
-        }
-        else {continue}
-    }
+// function gameOfFive(playerSelection) {
+//     let playerScore = 0
+//     let computerScore = 0
+//     for (let i = 0; i < 5; i++) {
+//         let result = playRound(playerSelection, getComputerChoice())
+//         if (result == 'win') {
+//             playerScore++
+//         }
+//         else if (result == 'lost') {
+//             computerScore++
+//         }
+//         else {continue}
+//     }
     
-    if (playerScore == computerScore) {
-        return ("Det ble uavgjort! " + playerScore + "-" + computerScore)
-    }
-    else if (playerScore > computerScore) {
-        return ("Du vant! " + playerScore + "-" + computerScore)
-    }
-    else {
-        return ("Du tapte! " + playerScore + "-" + computerScore)
-    }
-}
+//     if (playerScore == computerScore) {
+//         return ("Det ble uavgjort! " + playerScore + "-" + computerScore)
+//     }
+//     else if (playerScore > computerScore) {
+//         return ("Du vant! " + playerScore + "-" + computerScore)
+//     }
+//     else {
+//         return ("Du tapte! " + playerScore + "-" + computerScore)
+//     }
+// }
 
-let playerSelection;
-let resultat;
-let legalMoves = ['stein','saks','papir']
-
-document.getElementById("submit").onclick = function() {
-    playerSelection = document.getElementById("choice").value;
-    if (legalMoves.includes(playerSelection.toLowerCase())) {
-    resultat = game(playerSelection)
-    document.getElementById("result").innerHTML = resultat
-    }
-    else {
-        alert("Skriv inn stein, saks eller papir")
-    }
-}
